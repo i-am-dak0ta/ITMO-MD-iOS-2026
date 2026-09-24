@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         return button
     }()
 
-    private var number = 0
+    private let viewModel = MainViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +45,7 @@ class ViewController: UIViewController {
 
         setupViews()
         setupConstraints()
+        bindViewModel()
 
         generateButton.addTarget(
             self,
@@ -113,19 +114,41 @@ class ViewController: UIViewController {
         ])
     }
 
+    private func bindViewModel() {
+        viewModel.onUiStateChange = { [weak self] state in
+            self?.render(state)
+        }
+
+        viewModel.onRoute = { [weak self] route in
+            self?.navigate(to: route)
+        }
+
+        render(viewModel.uiState)
+    }
+
+    private func render(_ state: MainUiState) {
+        numberLabel.text = state.numberText
+    }
+
+    private func navigate(to route: MainRoute) {
+        switch route {
+        case .secondScreen(let number):
+            let secondViewController = SecondViewController(
+                number: number
+            )
+
+            navigationController?.pushViewController(
+                secondViewController,
+                animated: true
+            )
+        }
+    }
+
     @objc private func generateButtonTapped() {
-        number = Int.random(in: 1...100)
-        numberLabel.text = "\(number)"
+        viewModel.handle(.generateButtonTapped)
     }
 
     @objc private func nextButtonTapped() {
-        let secondViewController = SecondViewController(
-            number: number
-        )
-
-        navigationController?.pushViewController(
-            secondViewController,
-            animated: true
-        )
+        viewModel.handle(.nextButtonTapped)
     }
 }

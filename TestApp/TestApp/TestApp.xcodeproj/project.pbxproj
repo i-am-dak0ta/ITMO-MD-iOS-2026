@@ -17,6 +17,12 @@
 		D58CD309305C36D90062AFCD /* TestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58CD308305C36D90062AFCD /* TestAppUITests.swift */; };
 		D58CD30B305C36D90062AFCD /* TestAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58CD30A305C36D90062AFCD /* TestAppUITestsLaunchTests.swift */; };
 		D58CD318305C478D0062AFCD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58CD317305C478D0062AFCD /* SecondViewController.swift */; };
+		D58CD411305C50000062AFCD /* MainDataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58CD401305C50000062AFCD /* MainDataState.swift */; };
+		D58CD412305C50000062AFCD /* MainUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58CD402305C50000062AFCD /* MainUiState.swift */; };
+		D58CD413305C50000062AFCD /* MainUiStateMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58CD403305C50000062AFCD /* MainUiStateMapper.swift */; };
+		D58CD414305C50000062AFCD /* MainUiEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58CD404305C50000062AFCD /* MainUiEvent.swift */; };
+		D58CD415305C50000062AFCD /* MainRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58CD405305C50000062AFCD /* MainRoute.swift */; };
+		D58CD416305C50000062AFCD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58CD406305C50000062AFCD /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,12 @@
 		D58CD308305C36D90062AFCD /* TestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppUITests.swift; sourceTree = "<group>"; };
 		D58CD30A305C36D90062AFCD /* TestAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D58CD317305C478D0062AFCD /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		D58CD401305C50000062AFCD /* MainDataState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataState.swift; sourceTree = "<group>"; };
+		D58CD402305C50000062AFCD /* MainUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUiState.swift; sourceTree = "<group>"; };
+		D58CD403305C50000062AFCD /* MainUiStateMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUiStateMapper.swift; sourceTree = "<group>"; };
+		D58CD404305C50000062AFCD /* MainUiEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUiEvent.swift; sourceTree = "<group>"; };
+		D58CD405305C50000062AFCD /* MainRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoute.swift; sourceTree = "<group>"; };
+		D58CD406305C50000062AFCD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +115,7 @@
 			children = (
 				D58CD2E7305C36D70062AFCD /* AppDelegate.swift */,
 				D58CD2E9305C36D70062AFCD /* SceneDelegate.swift */,
+				D58CD400305C50000062AFCD /* Main */,
 				D58CD2EB305C36D70062AFCD /* ViewController.swift */,
 				D58CD2ED305C36D70062AFCD /* Main.storyboard */,
 				D58CD2F0305C36D90062AFCD /* Assets.xcassets */,
@@ -111,6 +124,19 @@
 				D58CD317305C478D0062AFCD /* SecondViewController.swift */,
 			);
 			path = TestApp;
+			sourceTree = "<group>";
+		};
+		D58CD400305C50000062AFCD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D58CD401305C50000062AFCD /* MainDataState.swift */,
+				D58CD402305C50000062AFCD /* MainUiState.swift */,
+				D58CD403305C50000062AFCD /* MainUiStateMapper.swift */,
+				D58CD404305C50000062AFCD /* MainUiEvent.swift */,
+				D58CD405305C50000062AFCD /* MainRoute.swift */,
+				D58CD406305C50000062AFCD /* MainViewModel.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		D58CD2FD305C36D90062AFCD /* TestAppTests */ = {
@@ -265,6 +291,12 @@
 				D58CD2EC305C36D70062AFCD /* ViewController.swift in Sources */,
 				D58CD2E8305C36D70062AFCD /* AppDelegate.swift in Sources */,
 				D58CD2EA305C36D70062AFCD /* SceneDelegate.swift in Sources */,
+				D58CD411305C50000062AFCD /* MainDataState.swift in Sources */,
+				D58CD412305C50000062AFCD /* MainUiState.swift in Sources */,
+				D58CD413305C50000062AFCD /* MainUiStateMapper.swift in Sources */,
+				D58CD414305C50000062AFCD /* MainUiEvent.swift in Sources */,
+				D58CD415305C50000062AFCD /* MainRoute.swift in Sources */,
+				D58CD416305C50000062AFCD /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
