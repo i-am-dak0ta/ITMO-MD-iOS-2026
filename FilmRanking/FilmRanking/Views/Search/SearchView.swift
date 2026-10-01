@@ -47,5 +47,5 @@ struct SearchView: View {
 }
 
 #Preview {
-    SearchView(dependencies: AppDependencies())
+    SearchView(dependencies: .preview)
 }

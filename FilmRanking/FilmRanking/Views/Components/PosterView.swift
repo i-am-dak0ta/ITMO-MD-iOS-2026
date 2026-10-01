@@ -25,6 +25,8 @@ struct PosterView: View {
 }
 
 #Preview {
-    PosterView(movie: MockData.movies[0])
-        .frame(width: 120)
+    if let movie = AppDependencies.preview.movieService.popularMovies().first {
+        PosterView(movie: movie)
+            .frame(width: 120)
+    }
 }

@@ -25,5 +25,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(dependencies: AppDependencies())
+    ContentView(dependencies: .preview)
 }

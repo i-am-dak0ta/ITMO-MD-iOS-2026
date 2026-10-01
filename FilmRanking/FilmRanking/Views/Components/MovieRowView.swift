@@ -51,8 +51,14 @@ struct MovieRowView: View {
 }
 
 #Preview {
+    let dependencies = AppDependencies.preview
+
     List {
-        MovieRowView(movie: MockData.movies[0])
-        MovieRowView(movie: MockData.libraryEntries[0].movie, entry: MockData.libraryEntries[0])
+        if let movie = dependencies.movieService.popularMovies().first {
+            MovieRowView(movie: movie)
+        }
+        if let entry = dependencies.library.entries.first(where: { $0.status == .watched }) {
+            MovieRowView(movie: entry.movie, entry: entry)
+        }
     }
 }

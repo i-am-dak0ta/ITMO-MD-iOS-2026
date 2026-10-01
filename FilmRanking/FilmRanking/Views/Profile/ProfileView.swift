@@ -78,5 +78,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(dependencies: AppDependencies())
+    ProfileView(dependencies: .preview)
 }

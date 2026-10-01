@@ -115,7 +115,11 @@ struct MovieDetailView: View {
 }
 
 #Preview {
+    let dependencies = AppDependencies.preview
+
     NavigationStack {
-        MovieDetailView(movie: MockData.movies[2], library: UserLibrary())
+        if let movie = dependencies.movieService.movie(id: 3) {
+            MovieDetailView(movie: movie, library: dependencies.library)
+        }
     }
 }
