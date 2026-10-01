@@ -34,6 +34,7 @@
 		F11A0001000000000000BB03 /* RecordMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A0001000000000000AA03 /* RecordMapping.swift */; };
 		F11A0001000000000000BB04 /* DatabaseSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A0001000000000000AA04 /* DatabaseSeeder.swift */; };
 		F11A0001000000000000BB05 /* SeedData.json in Resources */ = {isa = PBXBuildFile; fileRef = F11A0001000000000000AA05 /* SeedData.json */; };
+		E1A0000100000000000AB002 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0000100000000000AB001 /* KeychainService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		F11A0001000000000000AA03 /* RecordMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordMapping.swift; sourceTree = "<group>"; };
 		F11A0001000000000000AA04 /* DatabaseSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSeeder.swift; sourceTree = "<group>"; };
 		F11A0001000000000000AA05 /* SeedData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SeedData.json; sourceTree = "<group>"; };
+		E1A0000100000000000AB001 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 				79B4D92C59CF8D25F1FA934E /* MovieService.swift */,
 				544318157846753B6510A0D2 /* UserLibrary.swift */,
 				6EF49232466CC564BCA1941C /* AppDependencies.swift */,
+				E1A0000100000000000AB001 /* KeychainService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				3122673ECD4DB7EDB198B5C7 /* MovieService.swift in Sources */,
 				32817424F1334771ECE8398C /* UserLibrary.swift in Sources */,
 				B1EB1756391DAF6F7F34AC73 /* AppDependencies.swift in Sources */,
+				E1A0000100000000000AB002 /* KeychainService.swift in Sources */,
 				FD43876AFB75565EB2FAD37F /* SearchViewModel.swift in Sources */,
 				ACA16E699147AC685A466F4C /* ProfileViewModel.swift in Sources */,
 				D2B84712919996D7A671CC3F /* SettingsViewModel.swift in Sources */,
