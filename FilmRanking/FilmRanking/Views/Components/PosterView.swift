@@ -25,8 +25,10 @@ struct PosterView: View {
 }
 
 #Preview {
-    if let movie = AppDependencies.preview.movieService.popularMovies().first {
-        PosterView(movie: movie)
-            .frame(width: 120)
+    Group {
+        if let movie = AppDependencies.preview.movieService.popularMovies().first {
+            PosterView(movie: movie)
+                .frame(width: 120)
+        }
     }
 }

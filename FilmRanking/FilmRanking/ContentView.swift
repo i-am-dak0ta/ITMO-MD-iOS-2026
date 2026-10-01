@@ -10,6 +10,9 @@ import SwiftUI
 struct ContentView: View {
     let dependencies: AppDependencies
 
+    /// Читается из UserDefaults и обновляется, когда переключатель меняют в настройках.
+    @AppStorage(SettingsViewModel.Keys.isDarkThemeEnabled) private var isDarkThemeEnabled = false
+
     var body: some View {
         TabView {
             SearchView(dependencies: dependencies)
@@ -21,6 +24,7 @@ struct ContentView: View {
             SettingsView()
                 .tabItem { Label("Настройки", systemImage: "gearshape") }
         }
+        .preferredColorScheme(isDarkThemeEnabled ? .dark : .light)
     }
 }
 

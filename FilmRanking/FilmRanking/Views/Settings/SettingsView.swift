@@ -11,11 +11,24 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("Аккаунт") {
+                Section {
                     LabeledContent("Кинопоиск", value: viewModel.isAccountLinked ? "Привязан" : "Не привязан")
-                    Button("Привязать аккаунт") {
-                        viewModel.linkAccountTapped()
+                    if let maskedApiKey = viewModel.maskedApiKey {
+                        LabeledContent("API-ключ", value: maskedApiKey)
                     }
+                    if viewModel.isAccountLinked {
+                        Button("Отвязать", role: .destructive) {
+                            viewModel.unlinkAccount()
+                        }
+                    } else {
+                        Button("Привязать API-ключ") {
+                            viewModel.linkAccountTapped()
+                        }
+                    }
+                } header: {
+                    Text("Аккаунт")
+                } footer: {
+                    Text("Ключ хранится в Keychain.")
                 }
 
                 Section("Оформление") {
@@ -35,10 +48,39 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle("Настройки")
-            .alert("Пока недоступно", isPresented: $viewModel.showNotAvailableAlert) {
-                Button("OK", role: .cancel) {}
-            } message: {
-                Text("Привязка аккаунта появится после подключения API Кинопоиска.")
+            .sheet(isPresented: $viewModel.isLinkSheetPresented) {
+                LinkApiKeyView(viewModel: viewModel)
+            }
+        }
+    }
+}
+
+/// Экран ввода API-ключа Кинопоиска.
+private struct LinkApiKeyView: View {
+    @ObservedObject var viewModel: SettingsViewModel
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section {
+                    SecureField("API-ключ", text: $viewModel.apiKeyInput)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled()
+                } footer: {
+                    Text("Ключ сохранится в Keychain и будет использоваться для запросов к API Кинопоиска.")
+                }
+            }
+            .navigationTitle("API Кинопоиска")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Отмена") { dismiss() }
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Сохранить") { viewModel.saveApiKey() }
+                        .disabled(!viewModel.canSaveApiKey)
+                }
             }
         }
     }

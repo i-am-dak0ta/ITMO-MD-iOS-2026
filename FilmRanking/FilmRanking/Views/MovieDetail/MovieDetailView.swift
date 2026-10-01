@@ -115,11 +115,9 @@ struct MovieDetailView: View {
 }
 
 #Preview {
-    let dependencies = AppDependencies.preview
-
     NavigationStack {
-        if let movie = dependencies.movieService.movie(id: 3) {
-            MovieDetailView(movie: movie, library: dependencies.library)
+        if let movie = AppDependencies.preview.movieService.movie(id: 3) {
+            MovieDetailView(movie: movie, library: AppDependencies.preview.library)
         }
     }
 }
